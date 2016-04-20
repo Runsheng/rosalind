@@ -6,6 +6,8 @@ URL: http://rosalind.info/problems/perm/
 2016/05/08, runsheng
 '''
 
+# there is a easyway to do the job
+from itertools import permutations
 
 def perm(nums):
     """
@@ -32,4 +34,5 @@ if __name__=="__main__":
         for n in i:
             print n,
         print
+
 
