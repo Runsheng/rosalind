@@ -19,7 +19,6 @@ Return: A shortest superstring containing all the given strings (thus correspond
 
 # reqire: fasta2dic from GC
 from GC import fasta_to_dic
-from itertools import permutations
 from GRPH import graph
 
 def find_startnode(overlap_d):
@@ -35,7 +34,6 @@ def find_startnode(overlap_d):
         if key not in list_3:
             start_node=key
     return start_node
-
 
 
 def layout(overlap_d):
@@ -64,6 +62,13 @@ def overlap(fa_dic, k_start=3):
     return overlap_d
 
 def _read_merge(primer_5, primer_3, k_start):
+    """
+    merge two sequence with unknown overlap
+    :param primer_5:
+    :param primer_3:
+    :param k_start:
+    :return:
+    """
     for k in range(k_start, min(len(primer_5), len(primer_3))):
         if primer_5[-k:]==primer_3[:k]:
             pass
@@ -72,6 +77,13 @@ def _read_merge(primer_5, primer_3, k_start):
 
 
 def read_merge(primer_5,primer_3,k):
+    """
+    merge two sequences with known overlap length
+    :param primer_5:
+    :param primer_3:
+    :param k:
+    :return:
+    """
     return primer_5+primer_3[k:]
 
 
@@ -96,6 +108,5 @@ def assembly(fastafile, k_start=3):
 
 if __name__=="__main__":
     # test using long_test.txt and k=4
-
     #print assembly("./data/long_test.txt", k_start=3)
     print assembly("./data/rosalind_long.txt", k_start=200)
