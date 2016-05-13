@@ -4,8 +4,6 @@ Rosalind ID: LONG
 Problem Title: Genome Assembly as Shortest Superstring
 URL: http://rosalind.info/problems/long/
 2015/04/17, runsheng
-
-todo: unfinished
 '''
 """
 For a collection of strings, a larger string containing every one of the smaller strings as a substring is called a superstring.
